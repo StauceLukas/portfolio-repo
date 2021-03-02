@@ -1,9 +1,16 @@
 $primary-color: #444;
-$secondary-color: #D6ED17FF;
+$secondary-color: #44E44E;
+
+$facebook-color: #587BC4;
+$twitter-color: #00A2F3;
+$linkedin-color: #0A66C2;
+$github-color: #BEBFC1;
+
 
 $show-home-image: true;
 $home-image: url(/img/background.jpg);
-$background-opacity: 0.5;
+$aboutme-image: url(/img/aboutme-img.jpg);
+$background-opacity: 0.6;
 
 @mixin background{
     @if $show-home-image{
@@ -11,9 +18,9 @@ $background-opacity: 0.5;
             background: $home-image;
             background-attachment: fixed;
             background-size: cover;
-        }
 
-        .overlay{
+        &:after{
+            content: '';
             position: absolute;
             right: 0;
             top: 0;
@@ -21,10 +28,68 @@ $background-opacity: 0.5;
             height: 100%;
             z-index: -1;
             background: rgba($primary-color, $background-opacity);
+            }
         }
+    }
+}
+
+@mixin background1{
+    @if $show-home-image{
+        &#home-aboutme{
+            background: $aboutme-image;
+            background-attachment: fixed;
+            background-size: cover;
+
+        &:after{
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgba($primary-color, 0.8);
+            }
+        }
+    }
+}
+
+
+
+@function set-text-color($color){
+    @if(lightness($color) > 40){
+        @return #000;
+    }
+    @else{
+        @return #fff;
     }
 }
 
 @mixin easeOut {
     transition: all 0.5s ease-out;
+}
+
+
+@mixin mediaSm{
+    @media screen and (max-width: 500px){
+        @content;
+    }   
+}
+
+@mixin mediaMd{
+    @media screen and (max-width: 768px){
+        @content;
+    }   
+}
+
+@mixin mediaLg{
+    @media screen and (min-width: 769px)and (max-width: 1170px){
+        @content;
+    }   
+}
+
+@mixin mediaXL{
+    @media screen and (minx-width: 1171px){
+        @content;
+    }   
 }
