@@ -92,15 +92,27 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (minx-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
+
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
     text-align: center; }
     main .lg-heading {
       line-height: 1;
-      margin-bottom: 1rem; } }
+      margin-bottom: 1rem; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
+  .projects {
+    grid-template-columns: 1fr; }
   main {
     align-items: center;
     text-align: center; }
@@ -196,7 +208,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons .facebook-logo {
@@ -227,8 +239,8 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bio-image bio bio' 'edu       edu edu';
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-areas: 'bio-image bio bio bio' 'edu       hobby experience experience';
+  grid-template-columns: repeat(4, 1fr); }
 
 .bio-image {
   grid-area: bio-image;
@@ -242,4 +254,78 @@ main {
 
 .edu {
   grid: edu;
-  font-size: 18px; }
+  font-size: 18px;
+  background: #444444;
+  opacity: 0.8;
+  padding: 0.8rem 0.8rem;
+  border-bottom: #44E44E 5px solid; }
+
+.hobby {
+  grid: hobby;
+  font-size: 18px;
+  border-bottom: #44E44E;
+  background: #444444;
+  opacity: 0.8;
+  padding: 0.8rem 0.8rem;
+  border-bottom: #44E44E 5px solid; }
+
+.experience {
+  grid: experience;
+  font-size: 18px;
+  border-bottom: #44E44E;
+  background: #444444;
+  opacity: 0.8;
+  padding: 0.8rem 0.8rem;
+  border-bottom: #44E44E 5px solid; }
+
+h3 {
+  color: #44E44E; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    background: #444;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #444; }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem; }
+  .projects img {
+    width: 100%;
+    border: solid 3px #fff; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #44E44E;
+      transition: all 0.5s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.6rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #44E44E; }
+
+.btn-dark {
+  background: #2b2b2b; }
+
+.btn-light {
+  background: #5e5e5e; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  height: 60px; }
