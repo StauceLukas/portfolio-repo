@@ -8,8 +8,8 @@ $github-color: #BEBFC1;
 
 
 $show-home-image: true;
-$home-image: url(/img/background.jpg);
-$aboutme-image: url(/img/aboutme-img.jpg);
+$home-image: url(/dist/img/background.jpg);
+$aboutme-image: url(/dist/img/aboutme-img.jpg);
 $background-opacity: 0.6;
 
 @mixin background{
