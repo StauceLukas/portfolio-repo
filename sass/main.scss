@@ -118,8 +118,8 @@ main{
     display: grid;
     grid-gap: 30px;
     grid-template-areas: 
-    'bio-image bio bio bio'
-    'edu       hobby experience experience';
+    'bio-image  bio   bio        bio'
+    'education  hobby skills experience';
 
     grid-template-columns: repeat(4, 1fr);
 
@@ -137,14 +137,29 @@ main{
     font-size: 24px;
 }
 
-.edu{
-    grid: edu;
+.education{
+    grid: education;
     font-size: 18px;
     background: lighten($color: $primary-color, $amount: 0.1);
     opacity: 0.8;
     padding: 0.8rem 0.8rem;
     border-bottom: $secondary-color 5px solid;
+
+    .bachelor{
+        
+        p{
+            padding: 0.3rem 1rem;
+            margin: 0;
+        }
+
+        h3{
+            padding: 0.3rem 1rem;
+            margin: 0;
+        }
+    }
+
 }
+
 
 .hobby{
     grid: hobby;
@@ -156,6 +171,15 @@ main{
     border-bottom: $secondary-color 5px solid;
 }
 
+.skills{
+    grid: skills;
+    font-size: 18px;
+    border-bottom: $secondary-color;
+    background: lighten($color: $primary-color, $amount: 0.1);
+    opacity: 0.8;
+    padding: 0.8rem 0.8rem;
+    border-bottom: $secondary-color 5px solid;
+}
 
 .experience{
     grid: experience;
@@ -170,6 +194,7 @@ main{
 h3{
     color: $secondary-color;
 }
+
 
 .boxes{
     display: flex;

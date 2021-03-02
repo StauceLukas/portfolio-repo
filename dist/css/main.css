@@ -26,7 +26,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  opacity: 1;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
@@ -239,7 +239,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bio-image bio bio bio' 'edu       hobby experience experience';
+  grid-template-areas: 'bio-image  bio   bio        bio' 'education  hobby skills experience';
   grid-template-columns: repeat(4, 1fr); }
 
 .bio-image {
@@ -252,16 +252,31 @@ main {
   grid-area: bio;
   font-size: 24px; }
 
-.edu {
-  grid: edu;
+.education {
+  grid: education;
   font-size: 18px;
   background: #444444;
   opacity: 0.8;
   padding: 0.8rem 0.8rem;
   border-bottom: #44E44E 5px solid; }
+  .education .bachelor p {
+    padding: 0.3rem 1rem;
+    margin: 0; }
+  .education .bachelor h3 {
+    padding: 0.3rem 1rem;
+    margin: 0; }
 
 .hobby {
   grid: hobby;
+  font-size: 18px;
+  border-bottom: #44E44E;
+  background: #444444;
+  opacity: 0.8;
+  padding: 0.8rem 0.8rem;
+  border-bottom: #44E44E 5px solid; }
+
+.skills {
+  grid: skills;
   font-size: 18px;
   border-bottom: #44E44E;
   background: #444444;
